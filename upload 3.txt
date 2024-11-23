@@ -1,0 +1,57 @@
+programa {
+  funcao inicio() {
+    inteiro x1
+    inteiro y
+    inteiro position
+    inteiro maismais = 0
+    inteiro newpassword
+
+    inteiro cpf[100],password[100]
+    inteiro newcpf
+
+
+    
+    escreva("Insira um número para continuar o processamento:")
+    escreva("\n-----------------------------")
+    escreva("\n1 - Mostrar todas as pessoas ")
+    escreva("\n2 - Cadastrar nova pessoa")
+    escreva("\n3 - Alterar cadastro")
+    escreva("\n4 - Remover pessoa")
+    escreva("\n----------------------------\n")
+    leia(x1)
+
+    se(x1 == 1){
+      escreva("todos os cpfs ", cpf)
+      escreva("todas as senhas ", password)
+
+    }
+      senao{
+        se(x1 == 2){  
+          escreva("\n-------------------------")
+          escreva("\nescreva seu cpf sem - e .")
+          escreva("\n-------------------------\n")
+          leia(cpf)
+          maismais ++
+          escreva("\n-----------------")
+          escreva("\nescreva sua senha")
+          escreva("\n-----------------\n")
+          leia(password)
+          escreva("conta cadrastada com sucesso")
+        }
+        se(x1 == 3){
+          escreva("\n---------------")
+          escreva("\nescreva seu cpf")
+          escreva("\n---------------\n")
+          leia(newcpf)
+          escreva("\n--------------------")
+          escreva("\nredifina a sua senha")
+          escreva("\n--------------------\n")
+          leia(newpassword)
+
+
+      }
+    }
+
+  }
+}
+
