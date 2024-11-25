@@ -1,0 +1,86 @@
+programa {
+  funcao inicio() {
+    inteiro opt, opt2
+    inteiro maismais = 0
+    inteiro newpassword[100]
+    inteiro cpf[100],password[100]
+    cadeia resp
+
+    
+    escreva("Insira um número para continuar o processamento:")
+    escreva("\n-----------------------------")
+    escreva("\n1 - Mostrar todas as pessoas ")
+    escreva("\n2 - Cadastrar nova pessoa")
+    escreva("\n3 - Alterar cadastro")
+    escreva("\n4 - Remover cadastro")
+    escreva("\n----------------------------\n")
+    leia(opt)
+
+    escolha(opt){
+      caso 1: 
+        escreva("todos os cpfs ", cpf)
+        escreva("todas as senhas ", password)
+        pare 
+      
+      caso 2: 
+        escreva("\n--------------------------")
+        escreva("\nescreva seu cpf sem - e .")
+        escreva("\n--------------------------\n")
+        leia(cpf)
+        maismais ++
+        escreva("\n------------------")
+        escreva("\nescreva sua senha")
+        escreva("\n------------------\n")
+        leia(password)
+        escreva("conta cadrastada com sucesso")
+        pare
+
+      caso 3:
+        escreva("\n----------------")
+        escreva("\nescreva seu cpf")
+        escreva("\n----------------\n")
+        leia(cpf)
+        escreva("\n---------------------")
+        escreva("\nredifina a sua senha")
+        escreva("\n---------------------\n")
+        leia(newpassword)
+        pare
+
+      caso 4:
+        escreva("\n------------------------------------------------------------\n")
+        escreva("Deseja remover algum cadastro?\n")
+        escreva("Caso deseje, escreva sim ou nao para seguir o processamento\n")
+        escreva("------------------------------------------------------------\n")
+        leia(resp)
+        se(resp == "sim" ou resp == "s"){
+          escreva("------------------------------------------------------------------\n")
+          escreva("Escreva seu cpf e sua senha, respectivamente, para a confirmação.\nCom isso, excluiremos seu cadastro.\n")
+          escreva("-----------------------------------------------------------------\n")
+          escreva("cpf: ")
+          leia(cpf)
+          escreva("senha: ")
+          leia(password)
+          escreva("\n-------------------\n")
+          escreva("Cadastro excluído.\n")
+          escreva("-------------------\n")
+        }
+        se(resp == "nao" ou resp == "n"){
+          escreva("\n-----------------------\n")
+          escreva("Cadastro não escluído!\n")
+          escreva("-----------------------")
+        }
+        pare
+    }
+    escreva("\n\n\n\n\n\n\n\n")
+    escreva("\n---------------------------------------")
+    escreva("\n1 - Veja todos os nosso produtos")
+    escreva("\n2 - Veja nosso estoque")
+    escreva("\n3 - Veja o nosso cardapio")
+    escreva("\n4 - Veja nossos funcionarios")
+    escreva("\n5 - Pedidos de comanda(online e papel)")
+    escreva("\n6 - Extratos de lançamentos")
+    escreva("\n7 - Contas a receber e pagar\n")
+    escreva("---------------------------------------\n")
+    leia(opt2)
+  }
+}
