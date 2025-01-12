@@ -1,0 +1,667 @@
+programa {
+  inclua biblioteca Calendario
+  funcao inicio() {
+    inteiro hora, minuto
+   inteiro opt5
+   const inteiro extrato[5],data[5]
+
+
+    inteiro opt, opt2, opt3, opt4, pizza1, pizza2, tam1, tam2, bebida, outros, milkshake
+    inteiro maismais = 0
+    const inteiro newpassword[100]
+    const inteiro cpf[100],password[100]
+    cadeia resp1, resp2, loopP1, loopP2, loopP3, loopP4, loopF1
+    real pPizza1 = 0, pPizza2 = 0, pTotal1 = 0, pTotal2 = 0, pTotal3 = 0, pTotal4 = 0, pTotal5 = 0, pBebida = 0, pOutros = 0, pReal1 = 0, pReal2 = 0
+  
+    enquanto (opt != 5){
+      escreva("\nInsira um número para continuar o processamento:")
+      escreva("\n-----------------------------")
+      escreva("\n1 - Mostrar todas as pessoas ") 
+      escreva("\n2 - Cadastrar nova pessoa") // Funcionando
+      escreva("\n3 - Alterar cadastro") // Funcionando
+      escreva("\n4 - Remover cadastro") // Funcionando
+      escreva("\n5 - Passar para próxima página") // Funcionando
+      escreva("\n------------------------------\n")
+      leia(opt)
+      limpa()
+  
+      escolha(opt){
+
+        caso 1:
+          escreva("\nTodos os cpfs: ", cpf)
+          escreva("\nTodas as senhas: ", password)
+          escreva("\nEscreva s para passar para a proxima fase\n")
+          leia(resp1)
+          limpa()
+          pare
+
+        caso 2: 
+          escreva("\n--------------------------")
+          escreva("\nEscreva seu cpf sem - e .")
+          escreva("\n--------------------------\n")
+          leia(cpf)
+          maismais ++
+          escreva("\n------------------")
+          escreva("\nEscreva sua senha")
+          escreva("\n------------------\n")
+          leia(password)
+          escreva("\n-----------------------------")
+          escreva("\nConta cadrastada com sucesso")
+          escreva("\n-----------------------------")
+          limpa()
+          pare
+
+        caso 3:
+          escreva("\n----------------")
+          escreva("\nEscreva seu cpf")
+          escreva("\n----------------\n")
+          leia(cpf)
+          escreva("\n---------------------")
+          escreva("\nRedifina a sua senha")
+          escreva("\n---------------------\n")
+          leia(newpassword)
+          escreva("\n----------------------------")
+          escreva("\nConta alterada com sucesso.")
+          escreva("\n----------------------------")
+          limpa()
+          pare
+
+        caso 4:
+          escreva("\n------------------------------------------------------------")
+          escreva("\nDeseja remover algum cadastro?")
+          escreva("\nCaso deseje, escreva sim ou nao para seguir o processamento\n")
+          escreva("------------------------------------------------------------\n")
+          leia(resp2)
+          se(resp2 == "sim" ou resp2 == "s"){
+            escreva("------------------------------------------------------------------\n")
+            escreva("Escreva seu cpf e sua senha, respectivamente, para a confirmação.\nCom isso, excluiremos seu cadastro.\n")
+            escreva("-----------------------------------------------------------------\n")
+            escreva("cpf: ")
+            leia(cpf)
+            escreva("senha: ")
+            leia(password)
+            escreva("\n-------------------\n")
+            escreva("Cadastro excluído.\n")
+            escreva("-------------------\n")
+          }
+          se(resp2 == "nao" ou resp2 == "n"){
+            escreva("\n-----------------------\n")
+            escreva("Cadastro não excluído!\n")
+            escreva("-----------------------")
+          }
+          pare
+      }
+    } 
+
+    enquanto(opt2 != 6){
+      escreva("\n---------------------------------------")
+      escreva("\n1 - Veja todos os nosso produtos")
+      escreva("\n2 - Veja o nosso cardapio") // Funcionando 
+      escreva("\n3 - Veja nossos funcionarios") // Funcionando
+      escreva("\n4 - Extratos de lançamentos")
+      escreva("\n5 - Contas a receber e pagar")
+      escreva("\n6 - Finalizar\n") // Funcionando
+      escreva("---------------------------------------\n")
+      leia(opt2)
+      limpa()
+
+      escolha(opt2){
+
+        caso 2: 
+          escreva("\n----------------------------------[CARDÁPIO]----------------------------------") // FAZER LOOPING NOS PEDIDOS DE PIZZAS, BEBIDAS E OUTROS
+          escreva("\nEsse é o nosso cardápio. Seguido por nossas pizzas, bebidas e outros. Escolha:\n\n1 - Pizzas\n2 - Bebidas\n3 - Outros\n4 - Seguir para outra página.\n")
+          leia(opt3)
+        
+          escolha(opt3){
+            caso 1:
+              enquanto(loopP1 != "sim" ){
+                escreva("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                escreva("\n\n|Pizzas|\n\n1 - |Calabresa R$ 14,90|:\nMolho, calabresa, mussarela, azeitona, cebola e orégano.")
+                escreva("\n\n2 - |Mussarela R$ 14,90|:\nMolho, mussarela, azeitona preta, e orégano.")
+                escreva("\n\n3 - |Frango R$ 14,90|:\nMolho, mussarela, frango, milho, azeitona, cebola e cogumelo.")
+                escreva("\n\n4 - |Frango c/Catupiry R$ 19,90|:\nMolho, mussarela, frango, catupiry, milho, zeitona, cebola e cogumelo.")
+                escreva("\n\n5 - |Quatro Queijos R$ 14,90|:\nMolho, mussarela, provolone, gorgonzola, queijo fata, oregano, azeitona preta e manjericão.")
+                escreva("\n\n6 - |Toscana R$ 19,90|:\nMolho, mussarela, calabresa, ovo, cebola, azeitona, cogumelo e orégano.")
+                escreva("\n\n7 - |Portuguesa R$ 14,90|:\nMolho, mussarela, presunto, ovo, cebola, azeitona e orégano.")
+                escreva("\n\n8 - |Pizza Canadense R$ 19,90|:\nMolho, mussarela , lombo, creme De Leite, milho verde e azeitonas.")
+                escreva("\n\n9 - |Pizza Calabresa c/Catupiry R$ 19,90|:\nMolho, mussarela, calabresa, catupiry, cebola, azeitona e orégano.")
+                escreva("\n\n10 - |Passar para pizza doces|\n\n") 
+                leia(pizza1)
+            
+                se (pizza1 == 1 ou pizza1 == 2 ou pizza1 == 3 ou pizza1 == 4 ou pizza1 == 5 ou pizza1 == 6 ou pizza1 == 7 ou pizza1 == 8 ou pizza1 == 9){
+                  escreva("\nQuais seria o tamanho dessa pizza? Todos os tamanhos tem preços a serem adicionados ao valor total da pizza.\nPP = R$ 10,00 | P = R$ 15,00 | M = R$ 35,00 | G = R$ 40,00 | GG = R$ 60,00\n1 - PP / 2 - P / 3 - M / 4 - G / 5 - GG\n")
+                  leia(tam1)
+                }
+                escolha(pizza1){
+                  caso 1:
+                    pPizza1 = 14.90
+
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+
+                  caso 2: 
+                    pPizza1 = 14.90
+
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+
+                  caso 3:
+                    pPizza1 = 14.90
+
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+
+                  caso 4: 
+                    pPizza1 = 19.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+
+                  caso 5:
+                    pPizza1 = 14.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+
+                  caso 6:
+                    pPizza1 = 19.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+                    
+                  caso 7:
+                    pPizza1 = 14.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+                    
+                  caso 8: 
+                    pPizza1 = 19.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+                    
+                  caso 9:
+                    pPizza1 = 19.90
+                    se(tam1 == 1){
+                      tam1 = 10
+                    } senao se (tam1 == 2){
+                      tam1 = 15
+                    } senao se (tam1 == 3){
+                      tam1 = 35
+                    } senao se (tam1 == 4){
+                      tam1 = 40
+                    } senao se (tam1 == 5){
+                      tam1 = 60
+                    }
+                    pTotal1 = pTotal1 + pPizza1 + tam1
+                    pare
+                    
+                  caso contrario:
+                    pPizza1 = 0
+                    tam1 = 0 
+                    pTotal1 = pTotal1 + pPizza1 + tam1  
+                    pare             
+                }
+                  escreva("Deseja finalizar o pedido das pizzas salgadas?\n")
+                  leia(loopP1)
+                  se (loopP1 == "s" ou loopP1 == "sim" ou loopP1 == "Sim"){
+                    loopP1 = "sim"
+                  } 
+                }  
+                enquanto(loopP2 != "sim"){
+                  escreva("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+                  escreva("\nO total do seu pedido está em: R$",pTotal1)
+                  escreva("\n\n|Pizzas Doces|\n\n1 - |Chocolate R$ 14,90|:\nMassa folhada, chocolate ao leite e chantilly.")
+                  escreva("\n\n2 - |Romeu e Julieta R$ 14,90|:\nMassa folhada, goiabada, cream cheese e canela.")
+                  escreva("\n\n3 - |Californiana R$ 19,90|:\nPessêgo, figo, ameixa, abacaxi e cereja (frutas em calda).")
+                  escreva("\n\n4 - |Banana Nevada R$ 19,90|:\nBananas caramelizadas, cobertura de chocolate branco, açúcar e canela.")
+                  escreva("\n\n5 - |Prestígio R$ 14,90|:\nCoco fresco, chocolate e creme de beijinho.")
+                  escreva("\n\n6 - |Nutella com frutas vermelhas R$ 19,90|:\nCreme de nutella e frutas vermelhas.")
+                  escreva("\n\n7 - |Abacaxi com Coco R$ 19,90|:\nAbacaxi caramelizado com coco.")
+                  escreva("\n\n8 - |Dois Amores R$ 14,90|:\nChocolate branco e chocolate meio amargo coberto com granulado.")
+                  escreva("\n\n9 - |Paçoca R$ 19,90|:\nCreme de paçoca, leite condesado, decorado com paçocas.")
+                  escreva("\n\n10 - |Passar para próxima página|\n\n")
+                  leia(pizza2)
+                  se(pizza2 == 1 ou pizza2 == 2 ou pizza2 == 3 ou pizza2 == 4 ou pizza2 == 5 ou pizza2 == 6 ou pizza2 == 7 ou pizza2 == 8 ou pizza2 == 9){
+                    escreva("\nQuais seria o tamanho dessa pizza? Todos os tamanhos tem preços a serem adicionados ao valor total da pizza.\nPP = R$ 10,00 | P = R$ 15,00 | M = R$ 35,00 | G = R$ 40,00 | GG = R$ 60,00\n1 - PP / 2 - P / 3 - M / 4 - G / 5 - GG\n")
+                    leia(tam2)
+                  }
+
+                escolha(pizza2){
+                  caso 1:
+                    pPizza2 = 14.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 2:
+                    pPizza2 = 14.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 3:
+                    pPizza2 = 19.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+                  
+                  caso 4:
+                    pPizza2 = 19.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 5:
+                    pPizza2 = 14.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+                  
+                  caso 6:
+                    pPizza2 = 19.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 7:
+                    pPizza2 = 19.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 8:
+                    pPizza2 = 14.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso 9:
+                    pPizza2 = 19.90
+
+                    se(tam2 == 1){
+                      tam2 = 10
+                    } senao se (tam2 == 2){
+                      tam2 = 15
+                    } senao se (tam2 == 3){
+                      tam2 = 35
+                    } senao se (tam2 == 4){
+                      tam2 = 40
+                    } senao se (tam2 == 5){
+                      tam2 = 60
+                    }
+                    pTotal2 = pTotal2 + pPizza2 + tam2
+                    pare
+
+                  caso contrario:
+                  pPizza2 = 0
+                  tam2 = 0
+                  pTotal2 = pTotal2 + pPizza2 + tam2
+                  pare
+              }
+                escreva("Deseja finalizar o pedido das pizzas doces?\n")
+                leia(loopP2)
+                se (loopP2 == "s" ou loopP2 == "sim" ou loopP2 == "Sim"){
+                  loopP2 = "sim"
+                }
+                pReal1 = pTotal1 + pTotal2
+              } 
+
+            caso 2:
+              enquanto(loopP3 != "sim"){
+                escreva("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------") 
+                escreva("\nO total do seu pedido está em: R$",pReal1)
+                escreva("\n\n|Bebidas|\n\n1- |Refrigerante 350ml R$ 3,50|\n2 - |Refrigerante 1.5L R$ 9,00|\n3 - |Água 300ml R$ 4,00|\n4 - |Suco 350ml R$ 3,00|\n5 - |Suco 500ml 7,00|\n6 - |Suco 1.5L 12,00|\n7 - |Passar para próxima página|\n")
+                leia(bebida)
+                escolha(bebida){
+                  caso 1:
+                    pBebida = 3.50
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso 2:
+                    pBebida = 9.00
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso 3:
+                    pBebida = 4.00
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso 4:
+                    pBebida = 3.00
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso 5:
+                    pBebida = 7.00
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso 6:
+                    pBebida = 12.00
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+
+                  caso contrario:
+                    pBebida = 0
+                    pTotal3 = pTotal3 + pBebida
+                    pare
+              }
+                escreva("Deseja finalizar o pedido das bebidas?\n")
+                leia(loopP3)
+                se (loopP3 == "s" ou loopP3 == "sim" ou loopP3 == "Sim"){
+                  loopP3 = "sim"
+                }
+                pReal1 = pTotal1 + pTotal2 + pTotal3
+              }
+
+            caso 3:
+              enquanto(loopP4 != "sim"){
+              escreva("\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------") 
+              escreva("\nO total do seu pedido está em: R$",pReal1)
+              escreva("\n\n|Nossos outros acompanhamentos|\n\n1- |Taça de sorvete R$12,00|:\n3 bolas de sorvete a sua escolha, com adicional de calda também a sua escolha.\n\n2 - |Batata Rústica R$ 9,00|:\nPorção de 400g, batatas macias temperadas com páprica picante, sal e pimenta do reino. Acompanha molho especial da casa ou outros a sua escolha (Ketchup, maionese, mostarda, molho de queijo azul).\n\n3 - |Milkshake R$ 11,00|:\nOpções de morango, chocolate, baunilha, leite ninho com nutella (Adicional de R$6,00 no valor do milkshake).\n\n4 - |Passar para próxima página|\n")
+              leia(outros)
+              escolha(outros){
+                caso 1:
+                  pOutros = 12.00
+                  pTotal4 = pTotal4 + pOutros
+                  pare
+                
+                caso 2: 
+                  pOutros = 9.00
+                  pTotal4 = pTotal4 + pOutros
+                  pare
+                
+                caso 3: 
+                  escreva("\nQual o sabor do seu milkshake?\n1 - Chocolate, 2 - Morango, 3 - Baunilha, 4 - Leite ninho c/Nutella\n")
+                  leia(milkshake)
+                  se(milkshake == 1 ou milkshake == 2 ou milkshake == 3){
+                    pOutros = 11.00
+                    pTotal4 = pTotal4 + pOutros
+                  } senao {
+                    pOutros = 17.00
+                    pTotal4 = pTotal4 + pOutros
+                  }
+                  pare
+                
+                caso contrario: 
+                  pOutros = 0
+                  pTotal4 = pTotal4 + pOutros
+                  pare
+              }
+                escreva("Deseja finalizar o pedido dos acompanhamentos?\n")
+                leia(loopP4)
+                se (loopP4 == "s" ou loopP4 == "sim" ou loopP4 == "Sim"){
+                  loopP4 = "sim"
+                }
+                pReal1 = pReal1 + pTotal4
+            }
+          } 
+          escreva("O seu pedido saiu pelo total de: R$",pReal1)
+          extrato[0] = pReal1
+
+          
+   hora = Calendario.hora_atual(falso)
+   minuto = Calendario.minuto_atual()
+          data[0] = hora
+          pare
+
+        caso 3:
+          enquanto(loopF1 != "não"){
+          escreva("\n-------------------[LISTA DE FUNCIONÁRIOS]-------------------\n")
+          escreva("1 - |Gerentes|\n2 - |Garçons|\n3 - |Equipe de limpeza|\n4 - |Equipe de Técnicos em Informática|\n")
+          leia(opt4)
+          escolha(opt4){
+            caso 1:
+              limpa()
+              escreva("\n|Gerentes|\n\nNome: Robson de Lima\nIdade: 47 anos\nTempo de experiência: 18 anos gerenciando pessoas. Passando por 3 empresas e todas dando ótima recomendações do mesmo.\nFunção: Gerente dos garçons\n")
+              escreva("\nDeseja ir para outra parte dos funcionários?\n")
+              leia(loopF1)
+              se(loopF1 == "n" ou loopF1 == "não" ou loopF1 == "Não"){
+                loopF1 = "não"
+              }
+              pare 
+            
+            caso 2:
+              limpa()
+              escreva("\n|Garçons|\n\nNome: Murilo Souza\nIdade: 23 anos\nTempo de experiência: 3 anos\nFunção: Organizar os pedidos para a cozinha.\n") 
+              escreva("\nDeseja ir para outra parte dos funcionários?\n")
+              leia(loopF1)
+              se(loopF1 == "n" ou loopF1 == "não" ou loopF1 == "Não"){
+                loopF1 = "não"
+              }            
+              pare
+
+            caso 3:
+              limpa()
+              escreva("\n|Equipe de limpeza|\n\nNome: Rodrigo Nunes\nIdade: 29 anos\nTempo de experiência: 6 anos\nFunção: Limpeza antes da pizzaria abrir\n")
+              escreva("\nDeseja ir para outra parte dos funcionários?\n")
+              leia(loopF1)
+              se(loopF1 == "n" ou loopF1 == "não" ou loopF1 == "Não"){
+                loopF1 = "não"
+              }  
+              pare
+            
+            caso 4:
+              limpa()
+              escreva("\n|Equipe de Técnicos em Informática|\n\nNome: \nIdade: \nTempo de experiência: \nFunção: \n")
+              escreva("\nDeseja ir para outra parte dos funcionários?\n")
+              leia(loopF1)
+              se(loopF1 == "n" ou loopF1 == "não" ou loopF1 == "Não"){
+                loopF1 = "não"
+              }  
+              pare
+          }
+        }
+        caso 4:
+             
+              escreva("\n-------------------------")
+              escreva("\n 1 - entradas")
+              escreva("\n 2 - saidas")
+              escreva("\n 3 - sair da tela")
+              escreva("\n-------------------------\n")
+              leia(opt5)
+             escolha(opt5){
+              caso 1:
+              escreva("seu extrato é",extrato)
+              escreva("junto com as datas", data)
+              pare
+
+              caso 2:
+              escreva("")
+
+              pare
+
+
+              caso 3:
+                opt5 =3
+                pare
+              
+             pare
+            }
+
+             
+          pare
+        
+
+        
+        pare
+      }
+     
+    }
+  }
+}
